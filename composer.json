@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Salman\\jwt-auto-installer\\AutoJWTServiceProvider"
+                "Salman\\AutoJWT\\AutoJWTServiceProvider"
             ],
             "aliases": {
                 "AutoJWT": "Salman\\Mqtt\\Facades\\AutoJWT"

@@ -1,4 +1,5 @@
 <?php
+namespace Salman\AutoJWT\Service;
 
 class AutoJWTService
 {
