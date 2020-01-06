@@ -5,6 +5,7 @@
 ![stars](https://img.shields.io/github/stars/salmanzafar949/laravel-jwt-auto-installer)
 ![license](https://img.shields.io/github/license/salmanzafar949/laravel-jwt-auto-installer)
 [![Total Downloads](https://img.shields.io/packagist/dt/salmanzafar/laravel-jwt-auto-installer?style=flat-square)](https://packagist.org/packages/salmanzafar/laravel-jwt-auto-installer)
+
 A Laravel Library that let's you add tymon jwt auth library and all it's features with single command
 
 ## What this was required?
