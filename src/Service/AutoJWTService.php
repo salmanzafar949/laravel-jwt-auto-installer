@@ -16,7 +16,7 @@ class AutoJWTService
 
     private static function runCommand()
     {
-        Artisan::call('jwt-secret');
+        Artisan::call('jwt:secret');
     }
 
     private static function publishController()
