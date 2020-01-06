@@ -11,7 +11,7 @@ class AutoJWTService
         self::publishController();
         self::publishModel();
         self::publishRoutes();
-//        self::runCommand();
+        self::runCommand();
     }
 
     private static function runCommand()
@@ -57,15 +57,17 @@ class AutoJWTService
 
     private static function getRoutes()
     {
-        $routes  = "Route::group(['prefix' => 'user'], function () {".PHP_EOL;
-        $routes .= "Route::post('register', 'AuthController@register');".PHP_EOL;
-        $routes .= "Route::post('login',  'AuthController@login');".PHP_EOL;
-        $routes .= "Route::group(['middleware' => ['auth:api']], function () {".PHP_EOL;
-        $routes .= "Route::post('refresh', 'AuthController@refresh');".PHP_EOL;
-        $routes .= "Route::post('me', 'AuthController@me');".PHP_EOL;
-        $routes .= "Route::post('logout', 'AuthController@logout');".PHP_EOL;
-        $routes .= "};".PHP_EOL;
-        $routes .= "};".PHP_EOL;
+
+        $routes = "Route::group(['prefix' => 'user'], function () {
+            Route::post('register', 'AuthController@register');
+            Route::post('login',  'AuthController@login');
+            Route::group(['middleware' => ['auth:api']], function () {
+                Route::post('refresh', 'AuthController@refresh');
+                Route::post('me', 'AuthController@me');
+                Route::post('logout', 'AuthController@logout');
+            });
+        });".PHP_EOL;
+
 
         return $routes;
     }
