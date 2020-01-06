@@ -1,10 +1,19 @@
 # laravel-jwt-auto-installer
 
-A Laravel Library that let's you add tymon jwt auth library to your project easily
+A Laravel Library that let's you add tymon jwt auth library and all it's features with single command
 
 ## What this was required?
-The people who uses tymon/jwt-auth knows that every time they installs package they need to manually create AuthController and then copy and paste the entire code their and same things for Model and Routes.
-So every time when you have to do this it takes some time and being a developer we want more easy and simple way of doing thing. so the i came up with this idea of creating this and hopefully it will help you.
+The people who uses `tymon/jwt-auth` knows that every time they installs package they need to manually create AuthController and then copy and paste the entire code their and same things for Model and Routes.
+So every time when you have to do this it takes some time and being a developer we want more easy and simple way of doing thing. so the i came up with this idea of creating this and hopefully it will help you and will make your work easy.
+
+### what this package will do? 
+The package will create the following things for you
+
+* installs  ```tymon/jwt-auth``` for you
+* Will publish ```AuthController (with code)``` inside ```App\Http\Controllers```
+* ```User.php``` (Model with all code including jwt functions)
+* Will publish Routes (will create all the routes for auth e.g```(login, register, authenticated user detail, refresh token, logout)``` in `api.php`)
+* Will also publish the ```JWT_SECRET``` in your .env 
 
 ## Installation
 
@@ -17,7 +26,7 @@ composer require salmanzafar/laravel-jwt-auto-installer
 This package implements Laravel auto-discovery feature. After you install it the package provider and facade are added automatically for laravel >= 5.5.
 
 ## Configuration
-Publish the configuration file
+Publish the service provider file
 
 This step is required
 ```bash

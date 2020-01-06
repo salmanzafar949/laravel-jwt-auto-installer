@@ -1,6 +1,6 @@
 {
     "name": "salmanzafar/laravel-jwt-auto-installer",
-    "description": "A Laravel Library that let's you add tymon jwt auth library to your project easily",
+    "description": "A Laravel Library that let's you add tymon jwt auth library and all it's features with single command",
     "type": "library",
     "license": "MIT",
     "authors": [
