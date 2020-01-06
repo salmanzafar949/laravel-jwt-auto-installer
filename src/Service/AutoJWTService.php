@@ -1,6 +1,7 @@
 <?php
 namespace Salman\AutoJWT\Service;
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 
 class AutoJWTService
@@ -10,6 +11,12 @@ class AutoJWTService
         self::publishController();
         self::publishModel();
         self::publishRoutes();
+        self::runCommand();
+    }
+
+    private static function runCommand()
+    {
+        Artisan::call('jwt-secret');
     }
 
     private static function publishController()

@@ -2,35 +2,42 @@
 /**
  * Created by PhpStorm.
  * User: salman
- * Date: 2/22/19
+ * Date: 01/06/2020
  * Time: 1:34 PM
  */
 
 namespace Salman\AutoJWT;
 
 use Illuminate\Support\ServiceProvider;
+use Salman\AutoJWT\Commands\InstallJWT;
 
 class AutoJWTServiceProvider extends ServiceProvider
 {
 
-    public function boot()
-    {
-
-    }
-
     public function register()
     {
-      /*  $this->app->singleton('AutoJWT',function (){
+        $this->publishStubs();
+    }
 
-            return new AutoJWT();
-        });*/
+    protected function publishStubs()
+    {
+        $this->loadViewsFrom(__DIR__.'/resources/stubs', 'AutoJWT');
+
+        $this->publishes([
+            __DIR__.'/resources/stubs' => resource_path('vendor/salmanzafar/AutoJWT/stubs'),
+        ]);
     }
 
     /**
-     * @return array
+     * Bootstrap services.
+     *
+     * @return void
      */
-    public function provides()
+    public function boot()
     {
-        return ['AutoJWT'];
+        $this->commands([
+            InstallJWT::class,
+        ]);
     }
+
 }
