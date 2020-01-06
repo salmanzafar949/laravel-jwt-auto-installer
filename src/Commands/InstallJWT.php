@@ -40,7 +40,7 @@ class InstallJWT extends Command
     {
         AutoJWTService::makeThisHappen();
 
-        $this->info('Controller Model and Routes and Jwt Secret all published.');
+        $this->info('Controller Model and Routes and Jwt Secret published.');
         $this->info('Thanks');
     }
 }
