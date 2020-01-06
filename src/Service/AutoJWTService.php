@@ -11,7 +11,7 @@ class AutoJWTService
         self::publishController();
         self::publishModel();
         self::publishRoutes();
-        self::runCommand();
+//        self::runCommand();
     }
 
     private static function runCommand()
@@ -21,14 +21,16 @@ class AutoJWTService
 
     private static function publishController()
     {
-        $checkFile = app('/Http/Controllers/AuthController.php');
+        $filePath = "/Http/Controllers/AuthController.php";
+
+        $checkFile = app_path($filePath);
 
         $file = self::GetStubs('Controller');
 
         if (File::exists($checkFile))
             File::delete($checkFile);
 
-        file_put_contents(app_path($checkFile), $file);
+        file_put_contents(app_path($filePath), $file);
 
     }
 
@@ -53,23 +55,23 @@ class AutoJWTService
     }
 
 
-    private function getRoutes()
+    private static function getRoutes()
     {
-        $routes = "Route::group(['prefix' => 'user'], function () {
-            Route::post('register', 'AuthController@register');
-            Route::post('login',  'AuthController@login');
-                Route::group(['middleware' => ['auth:api']], function () {
-                    Route::post('refresh', 'AuthController@refresh');
-                    Route::post('me', 'AuthController@me');
-                    Route::post('logout', 'AuthController@logout']);
-                };
-            };";
+        $routes  = "Route::group(['prefix' => 'user'], function () {".PHP_EOL;
+        $routes .= "Route::post('register', 'AuthController@register');".PHP_EOL;
+        $routes .= "Route::post('login',  'AuthController@login');".PHP_EOL;
+        $routes .= "Route::group(['middleware' => ['auth:api']], function () {".PHP_EOL;
+        $routes .= "Route::post('refresh', 'AuthController@refresh');".PHP_EOL;
+        $routes .= "Route::post('me', 'AuthController@me');".PHP_EOL;
+        $routes .= "Route::post('logout', 'AuthController@logout');".PHP_EOL;
+        $routes .= "};".PHP_EOL;
+        $routes .= "};".PHP_EOL;
 
         return $routes;
     }
 
     private static function GetStubs($type)
     {
-        return file_get_contents(resource_path("vendor/salmanzafar/stubs/$type.stub"));
+        return file_get_contents(resource_path("vendor/salmanzafar/AutoJWT/stubs/$type.stub"));
     }
 }
