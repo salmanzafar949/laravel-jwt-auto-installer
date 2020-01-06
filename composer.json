@@ -37,7 +37,7 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "Salman\\jwt-auto-installer\\": "src/"
+            "Salman\\AutoJWT\\": "src/"
         }
     },
     "extra": {
