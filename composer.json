@@ -1,0 +1,53 @@
+{
+    "name": "salmanzafar/laravel-jwt-auto-installer",
+    "description": "A Laravel Library that let's you add tymon jwt auth library to your project easily",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Salman Zafar",
+            "email": "salmanzafar949@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "laravel5",
+        "mqtt-laravel",
+        "mqtt-laravel-publisher",
+        "mqtt-laravel-subscriber",
+        "laravel mqtt library",
+        "laravel-mqtt",
+        "laravel mqtt",
+        "mqtt laravel",
+        "php",
+        "php 7.0",
+        "php 7.1",
+        "php 7.2",
+        "php 7.3",
+        "php 7.4"
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "tymon/jwt-auth": "^1.0.0-rc.5"
+    },
+    "require-dev": {
+        "laravel/framework": ">=5.5"
+    },
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Salman\\jwt-auto-installer\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Salman\\jwt-auto-installer\\AutoJWTServiceProvider"
+            ],
+            "aliases": {
+                "AutoJWT": "Salman\\Mqtt\\Facades\\AutoJWT"
+            }
+        }
+    }
+}
