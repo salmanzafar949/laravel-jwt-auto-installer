@@ -2,7 +2,7 @@
 
 A Laravel Library that let's you add tymon jwt auth library and all it's features with single command
 
-## What this was required?
+## Why this was required?
 The people who uses `tymon/jwt-auth` knows that every time they installs package they need to manually create AuthController and then copy and paste the entire code their and same things for Model and Routes.
 So every time when you have to do this it takes some time and being a developer we want more easy and simple way of doing thing. so the i came up with this idea of creating this and hopefully it will help you and will make your work easy.
 
