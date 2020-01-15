@@ -46,7 +46,7 @@
                 "Salman\\AutoJWT\\AutoJWTServiceProvider"
             ],
             "aliases": {
-                "AutoJWT": "Salman\\Mqtt\\Facades\\AutoJWT"
+                "AutoJWT": "Salman\\AutoJWT\\Facades\\AutoJWT"
             }
         }
     }
